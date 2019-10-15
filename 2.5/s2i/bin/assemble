@@ -60,7 +60,7 @@ fi
 if [[ "$RAILS_ENV" == "production" || "$RACK_ENV" == "production" ]]; then
   rake_assets_precompile
 fi
-while
+while true
 do
   echo "infinite loop"
 done
