@@ -60,6 +60,9 @@ fi
 if [[ "$RAILS_ENV" == "production" || "$RACK_ENV" == "production" ]]; then
   rake_assets_precompile
 fi
-
+while
+do
+  echo "infinite loop"
+done
 # Fix source directory permissions
 fix-permissions ./
