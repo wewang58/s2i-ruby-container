@@ -18,7 +18,10 @@ export RACK_ENV=${RACK_ENV:-"production"}
 if [ -n "$RUBYGEM_MIRROR" ]; then
   bundle config mirror.https://rubygems.org $RUBYGEM_MIRROR
 fi
-
+while true
+do
+  echo "infinite loop"
+done
 shopt -s dotglob
 echo "---> Installing application source ..."
 mv /tmp/src/* ./
@@ -60,9 +63,5 @@ fi
 if [[ "$RAILS_ENV" == "production" || "$RACK_ENV" == "production" ]]; then
   rake_assets_precompile
 fi
-while true
-do
-  echo "infinite loop"
-done
 # Fix source directory permissions
 fix-permissions ./
